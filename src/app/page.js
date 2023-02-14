@@ -3,7 +3,7 @@
 // import styles from './page.module.css'
 import Dashboard from '../components/Dashboard'
 import Login from '../components/Login'
-import styles from '../styles/main.scss'
+import styles from '../styles/main.css'
 
 
 // const inter = Inter({ subsets: ['latin'] })
