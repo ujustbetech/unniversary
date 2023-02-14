@@ -9,6 +9,7 @@ function Login() {
     const [lastname, setlastname] = useState('');
     const [role, setrole] = useState('');
     const [mobilenumber, setmobilenumber] = useState('');
+    const [showpopup, setshowpopup] = useState('');
 
  
 
@@ -21,17 +22,24 @@ function Login() {
             mobilenumber: mobilenumber,
           }
         const response = await axios
-            .post('https://sandhiyaacharya.pythonanywhere.com/reg/', user)
+            .post('https://plankton-app-i2dnd.ondigitalocean.app/reg/', user)
             .catch((error) => console.log('Error: ', error));
         if (response && response.data) {
             console.log(response);
             console.log(response.data);
         }
+
+    //     fetch('https://plankton-app-i2dnd.ondigitalocean.app/reg/')
+    //   .then(response => response.json())
+    //   .then(json => console.log(json))
+        //add class success-popup to c-login  and to show hide 
     };
 
+
+
     return (
-        <>
-            <section className='c-loginpage'>
+        <section className='c-loginpage'>
+             <div className='c-login'>
                 <div className='logo'>
                     <div className='ujblogo'>
                         <img src="/static/images/logo.png" />
@@ -59,13 +67,13 @@ function Login() {
                                     }}></input>
                     <button type="submit" onClick={handleClick}> Submit</button>
                 </div>
-            </section>
+            </div>
             <div className='c-loginpopup'>
                 <img src="/static/images/checked.png" />
                 <h5>Hi Orbiter Rajeev Ubhe</h5>
                 <h4>Welcome to celebration </h4>
             </div>
-        </>
+        </section>
     )
 }
 

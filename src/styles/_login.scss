@@ -1,100 +1,127 @@
-.c-loginpage {
+.c-loginpage{
     background-image: url("../../public/static/images/spaceimg.png");
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     padding: 50px 0;
-
-    .logo {
-        display: flex;
-        flex-direction: column;
-        row-gap: 64px;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 30px;
-    }
-
-    .regfrom {
-        padding: 16px 42px;
-        display: flex;
-        flex-direction: column;
-        row-gap: 40px;
-        align-items: center;
-        justify-content: center;
-
-        input {
-            border-radius: 32px;
-            padding: 0px 40px;
-            width: 100%;
-            outline: none;
-            font-family: $mukta;
-            font-size: 18px;
-            line-height: 60px;
-            color: $bluecolor;
-            background-color: $whitecolor;
-            border: 1px solid $greycolor;
-
-            &::placeholder {
-                color: $bluecolor;
-            }
+    position: relative;
+    .c-login {
+        &.success-popup{
+            opacity: 0.8;
+            pointer-events: none;
+            cursor: default;
         }
-
-        select {
-            border-radius: 32px;
-            padding: 12px 40px;
-            width: 100%;
-            outline: none;
-            color: $bluecolor;
-            background-color: $whitecolor;
-            border: 1px solid $greycolor;
-            font-size: 18px;
-            font-family: $mukta;
-
-            option {
+        .logo {
+            display: flex;
+            flex-direction: column;
+            row-gap: 64px;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+    
+        .regfrom {
+            padding: 16px 42px;
+            display: flex;
+            flex-direction: column;
+            row-gap: 40px;
+            align-items: center;
+            justify-content: center;
+    
+            input {
+                border-radius: 32px;
+                padding: 0px 40px;
                 width: 100%;
+                outline: none;
+                font-family: $mukta;
+                font-size: 18px;
+                line-height: 60px;
+                color: $bluecolor;
+                background-color: $whitecolor;
+                border: 1px solid $greycolor;
+    
+                &::placeholder {
+                    color: $bluecolor;
+                }
+            }
+    
+            select {
+                border-radius: 32px;
+                padding: 12px 40px;
+                width: 100%;
+                outline: none;
                 color: $bluecolor;
                 background-color: $whitecolor;
                 border: 1px solid $greycolor;
                 font-size: 18px;
                 font-family: $mukta;
+    
+                option {
+                    width: 100%;
+                    color: $bluecolor;
+                    background-color: $whitecolor;
+                    border: 1px solid $greycolor;
+                    font-size: 18px;
+                    font-family: $mukta;
+                }
+    
+    
             }
-
-
+    
+            button {
+                border-radius: 32px;
+                background-color: $orangecolor;
+                font-size: 24px;
+                line-height: 60px;
+                color: $whitecolor;
+                font-family: $mukta;
+                border: none;
+                width: 100%;
+            }
         }
-
-        button {
-            border-radius: 32px;
-            background-color: $orangecolor;
+      
+    }
+    
+    .c-loginpopup {
+        max-width: 460px;
+        width: 100%;
+        border-radius: 10px;
+        background-color: $whitecolor;
+        position: absolute;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        // margin: 30px;
+        padding: 60px 22px;
+        opacity: 0;
+        &.showpopup{
+            opacity: 1;
+        }
+    
+        img {
+            position: absolute;
+            top: calc(-50% + 60px);
+            left: 50%;
+            transform: translate(-50%);
+        }
+    
+        h5 {
             font-size: 24px;
             line-height: 60px;
-            color: $whitecolor;
+            color: $bluecolor;
+            font-weight: 500;
             font-family: $mukta;
-            border: none;
-            width: 100%;
+            text-align: center;
         }
-    }
-}
-
-.c-loginpopup {
-    max-width: 460px;
-    width: 100%;
-    border-radius: 10px;
-    background-color: $whitecolor;
-
-    .h5 {
-        font-size: 24px;
-        line-height: 60px;
-        color: $bluecolor;
-        font-weight: 500;
-        font-family: $mukta;
-    }
-
-    .h4 {
-        font-size: 42px;
-        line-height: 60px;
-        color: $orangecolor;
-        font-weight: 400;
-        font-family: $forum;
+    
+        h4 {
+            font-size: 42px;
+            line-height: 60px;
+            color: $orangecolor;
+            text-align: center;
+            font-weight: 400;
+            font-family: $forum;
+        }
     }
 }

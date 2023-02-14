@@ -3,7 +3,7 @@ import React from 'react'
 function Dashboard() {
   return (
     <section className='c-dashboard'>
-        <h1>I am dashboard</h1>
+        <h1>hello</h1>
     </section>
   )
 }
