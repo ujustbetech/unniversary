@@ -1,0 +1,140 @@
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  text-size-adjust: none; }
+
+footer, header, nav, section, main {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+input {
+  -webkit-appearance: none;
+  border-radius: 0; }
+
+.c-dashboard {
+  background-color: aquamarine; }
+
+.c-loginpage {
+  background-image: url("../../public/static/images/spaceimg.png");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 50px 0;
+  position: relative; }
+  .c-loginpage .c-login.success-popup {
+    opacity: 0.8;
+    pointer-events: none;
+    cursor: default; }
+  .c-loginpage .c-login .logo {
+    display: flex;
+    flex-direction: column;
+    row-gap: 64px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px; }
+  .c-loginpage .c-login .regfrom {
+    padding: 16px 42px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    align-items: center;
+    justify-content: center; }
+    .c-loginpage .c-login .regfrom input {
+      border-radius: 32px;
+      padding: 0px 40px;
+      width: 100%;
+      outline: none;
+      font-family: "Mukta", sans-serif;
+      font-size: 18px;
+      line-height: 60px;
+      color: #16274f;
+      background-color: #ffffff;
+      border: 1px solid #959595; }
+      .c-loginpage .c-login .regfrom input::placeholder {
+        color: #16274f; }
+    .c-loginpage .c-login .regfrom select {
+      border-radius: 32px;
+      padding: 12px 40px;
+      width: 100%;
+      outline: none;
+      color: #16274f;
+      background-color: #ffffff;
+      border: 1px solid #959595;
+      font-size: 18px;
+      font-family: "Mukta", sans-serif; }
+      .c-loginpage .c-login .regfrom select option {
+        width: 100%;
+        color: #16274f;
+        background-color: #ffffff;
+        border: 1px solid #959595;
+        font-size: 18px;
+        font-family: "Mukta", sans-serif; }
+    .c-loginpage .c-login .regfrom button {
+      border-radius: 32px;
+      background-color: #fe6f06;
+      font-size: 24px;
+      line-height: 60px;
+      color: #ffffff;
+      font-family: "Mukta", sans-serif;
+      border: none;
+      width: 100%; }
+  .c-loginpage .c-loginpopup {
+    max-width: 460px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: #ffffff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 60px 22px;
+    opacity: 0; }
+    .c-loginpage .c-loginpopup.showpopup {
+      opacity: 1; }
+    .c-loginpage .c-loginpopup img {
+      position: absolute;
+      top: calc(-50% + 60px);
+      left: 50%;
+      transform: translate(-50%); }
+    .c-loginpage .c-loginpopup h5 {
+      font-size: 24px;
+      line-height: 60px;
+      color: #16274f;
+      font-weight: 500;
+      font-family: "Mukta", sans-serif;
+      text-align: center; }
+    .c-loginpage .c-loginpopup h4 {
+      font-size: 42px;
+      line-height: 60px;
+      color: #fe6f06;
+      text-align: center;
+      font-weight: 400;
+      font-family: "Forum"; }
+
+/*# sourceMappingURL=main.css.map */
