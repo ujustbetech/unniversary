@@ -1,5 +1,5 @@
 
-"use client"; // this is a client component
+"use client"; 
 import axios from 'axios';
 import React, { useState } from 'react';
 // import logo from '../images/logo.png'
