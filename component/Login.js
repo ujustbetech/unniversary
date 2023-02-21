@@ -1,7 +1,8 @@
 "use client";
 import CountdownTimer from '../CountdownTimer';
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Router, useRouter } from 'next/router';
 // import logo from '../images/logo.png'
 
 function Login() {
@@ -17,6 +18,22 @@ function Login() {
     const [loginfailedpopup, setloginfailedpopup] = useState(false);
     const [loginDone, setloginDone] = useState(false);
 
+    const router2 = useRouter()
+
+    useEffect(() => {
+        const saved = localStorage.getItem("itmes");
+        const localstoragedata = JSON.parse(saved)
+        if (saved) {
+            console.log("already Login",  localstoragedata.firstname );
+            setlogin(false);
+            setloginDone(true);
+            setresponsedata(localstoragedata)
+            // console.log(responsedata.firstname);
+            
+        } else {
+            
+        }
+      }, [])
 
     const hidepopup = (e) => {
         setshowpopup(false)
@@ -24,16 +41,27 @@ function Login() {
         setloginfailedpopup(false)
     }
 
-    const localstorage = () => {
-        console.log("local storage");
-        const itmes={
-            firstname: responsedata.firstname,
-            lastname: responsedata.lastname,
-            phonenumber: mobilenumber,
+    const localstorage = (localdata) => {
+        console.log("local storage", localdata);
+        const itmes = {
+            firstname: localdata.firstname,
+            lastname: localdata.lastname,
+            phonenumber: localdata.phonenumber,
         }
         localStorage.setItem('itmes', JSON.stringify(itmes));
-      };
-    
+    };
+
+
+    const scanClick = async (e) => {
+        e.preventDefault();
+
+        const saved = localStorage.getItem("itmes");
+        const localstoragedata = JSON.parse(saved)
+        console.log("current login", localstoragedata.phonenumber);
+        router2.push("/" + localstoragedata.phonenumber)
+        
+
+    }
 
     const handleClick = async (e) => {
         e.preventDefault();
@@ -62,6 +90,7 @@ function Login() {
                     setloginDone(true)
                     setlogin(false)
                     setregistration(false)
+                    localstorage(response.data);
 
 
                 }, 3000);
@@ -85,13 +114,13 @@ function Login() {
             .then(response => {
                 const posts = response.data;
                 setresponsedata(response.data);
-                console.log("after login", response.data);
+                console.log("after login", response);
                 if (response.status === 200) {
                     setloginDone(true)
                     setlogin(false)
                     setresponsedata(response.data);
-                    
-                    localstorage();
+
+                    localstorage(response.data);
                 }
                 //   this.setState ({posts});
             }).catch((error) => {
@@ -170,7 +199,7 @@ function Login() {
                             </li>
                         </ul>
                         <div className='scan'>
-                            <button >Scan</button>
+                            <button onClick={scanClick}>Scan</button>
                         </div>
                     </div> : null
                 }
