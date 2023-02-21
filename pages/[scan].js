@@ -13,6 +13,8 @@ const QrReader = dynamic(() => import("react-qr-reader"), { ssr: false });
 export default function Scan({ eventsName }) {
 
   console.log("EventsName:", eventsName.scan);
+  
+  
 
   const [text, setText] = useState('');
   const [imageUrl, setImageUrl] = useState('');
